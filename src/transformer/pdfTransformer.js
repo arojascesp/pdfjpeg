@@ -25,16 +25,16 @@ const transformPDF = async () => {
 
 	for (const file of files) {
 		const [filename] = file.split('.');
+		const finalFinal = filename.split('\\').pop();
 
 		await pdf.convert(path.resolve(PATHS.in, file), {
 			format: 'jpeg',
-			out_dir: path.dirname(PATHS.out),
-			out_prefix: path.dirname(PATHS.out).concat(`${filename}-image`),
+			out_dir: PATHS.out,
+			out_prefix: `${finalFinal}-image`,
 			page: null
 		});
 	}
 
-	console.log({ files });
 }
 
 module.exports = transformPDF;

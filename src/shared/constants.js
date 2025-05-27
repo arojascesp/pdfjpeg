@@ -1,9 +1,8 @@
 const path = require('path');
-const actualDirectory = path.dirname('.');
 
 const PATHS = {
-	in: path.resolve(actualDirectory, './in'),
-	out: path.resolve(actualDirectory, './out'),
+	in: path.resolve(__dirname, '..', '..', './in'),
+	out: path.resolve(__dirname, '..', '..', './out'),
 }
 
 module.exports = PATHS;

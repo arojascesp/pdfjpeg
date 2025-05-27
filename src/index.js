@@ -5,7 +5,7 @@ const transformPDF = require('./transformer/pdfTransformer');
 const main = async () => {
 	try {
 		await ensureMandatoryDirectories();
-		transformPDF();
+		await transformPDF();
 	} catch (e) {
 		console.log(e.message);
 		process.exit();
